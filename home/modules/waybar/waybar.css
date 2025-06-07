@@ -1,0 +1,117 @@
+@import "themes/catppuccin-mocha.css";
+
+/* Global Reset */
+* {
+  all: unset;
+}
+
+#waybar {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 0;
+  min-width: 0;
+  background-color: alpha(@crust, 0.5);
+  transition: background-color 0.5s ease;
+}
+
+/* === WORKSPACES === */
+#workspaces {
+  margin: 0.4rem 0.25rem;
+  padding-left: 0.3rem;
+  padding-right: 0.4rem;
+  border-radius: 9999px;
+  background-color: alpha(@base, 0.3);
+}
+
+#workspaces button {
+  padding: 0 0.6rem;
+  color: @overlay0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#workspaces button:hover {
+  color: @text;
+}
+
+#workspaces button.active {
+  color: @mauve;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @crust;
+}
+
+/* === MODULE SHARED STYLE === */
+#clock,
+#pulseaudio,
+#cpu,
+#memory,
+#language,
+#custom-logo,
+#custom-power,
+#custom-spotify,
+#custom-notification,
+#tray,
+#mpris {
+  margin: 0.4rem 0.25rem;
+  padding: 0 0.9rem;
+  border-radius: 9999px;
+  background-color: alpha(@base, 0.3);
+}
+
+/* === INDIVIDUAL MODULE COLORS === */
+#cpu {
+  color: @maroon;
+}
+
+#memory {
+  color: @peach;
+}
+
+#clock {
+  color: @green;
+}
+
+#clock.simpleclock {
+  color: @teal;
+}
+
+#pulseaudio {
+  color: @yellow;
+}
+
+#language {
+  color: @sky;
+}
+
+/* === MPRIS Status === */
+#mpris.playing {
+  color: @red;
+}
+
+#mpris.paused {
+  color: @overlay0;
+}
+
+/* === SEPARATORS === */
+#custom-sep {
+  padding: 0;
+  color: @overlay1;
+}
+
+/* === TOOLTIP === */
+tooltip,
+#tray menu {
+  background-color: @crust;
+  border: 1.5px solid @blue;
+  border-radius: 0.5rem;
+  color: @text;
+}
+
+/* === Window Empty Style === */
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
